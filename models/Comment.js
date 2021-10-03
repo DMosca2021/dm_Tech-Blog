@@ -16,13 +16,20 @@ Comment.init(
       allowNull: false,
     },
     content: {
-        type: DataTypes.TEXT,
-        allowNull: true,
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    blogComment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog',
+        key: 'id',
+      },
     },
     readerComment_id: {
       type: DataTypes.INTEGER,
