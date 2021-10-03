@@ -1,0 +1,17 @@
+body {
+    background-color: cadetblue;
+    height: 100vh;
+}
+
+h1 {
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+#nav-bar {
+    font-size: 25px;
+}
