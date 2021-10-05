@@ -52,3 +52,13 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
+
+## Need to finish
+
+- Finish Routes
+    - blogRoute, Need to finish the put, post, del routes for the blog comments.
+- Finish Views
+    - Finish partials
+- Start and Finish baisc JS files
+- Finish the basic seeds (currently still the stuff from the activities.)
+- Deploy to heroku 
