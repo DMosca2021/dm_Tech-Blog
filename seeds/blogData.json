@@ -1,8 +1,8 @@
 [
     {
-      "name": "Music Near Me",
-      "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-      "content": 5000
+      "name": "Testing, Testing, 1, 2, 3",
+      "description": "Why writing tests for your app is important!",
+      "content": "Testing is about making sure that the code in your application does what you expect it to do, and keeps doing what you expect it to do when you make changes"
     },
     {
       "name": "The Ultimate Tech Quiz",
