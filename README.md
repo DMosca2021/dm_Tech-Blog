@@ -55,8 +55,8 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Access to project
 
-[Deployed Link](https://devins-tech-blog.herokuapp.com/)
-[Repo Link](https://github.com/DMosca2021/dm_Tech-Blog)
+- [Deployed Link](https://devins-tech-blog.herokuapp.com/)
+- [Repo Link](https://github.com/DMosca2021/dm_Tech-Blog)
 
 ## Need to finish
 
