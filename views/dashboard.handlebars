@@ -1,27 +1,48 @@
-<div class="columns is-mobile">
-    <div class="column">
-        <h1 class="title is-1">Hello, {{user_name}}!</h1>
-        <a class="btn create-btn" href="">Create Post</a>
-    </div>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
 </div>
 
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New blog:</h3>
 
-<div class="columns is-mobile">
-    <div class="column is-full">
-        {{#if blog.length}}
-            <h2>Posted blogs:</h2>
-            {{#each blog as |blog|}}
-                <div class="row mb-4 project">
-                    <div class="col-md-5">
-                        <h2><a href="/blog/{{blog.id}}">{{blog.name}}</a></h2>
-                        <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
-                    </div>
-                    <div class="col-md-7">
-                        <p>{{blog.description}}</p>
-                        <p>{{blog.content}}</p>
-                    </div>
-                </div>
-            {{/each}}
-        {{/if}}
+    <form class="form new-blog-form">
+      <div class="form-group">
+        <label for="blog-name">Blog name:</label>
+        <input class="form-input" type="text" id="blog-name" name="blog-name" />
+      </div>
+      <div class="form-group">
+        <label for="blog-subject">Subject:</label>
+        <input class="form-input" type="text" id="blog-subject" name="blog-subject" />
+      </div>
+      <div class="form-group">
+        <label for="blog-desc">description:</label>
+        <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogs.length}}
+  <div class="col-md-6 blog-list">
+    <h3>Current blogs:</h3>
+
+    {{#each blogs as |blog|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
     </div>
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
+
+<script src="./js/blog.js"></script>
