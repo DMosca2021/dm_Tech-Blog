@@ -73,4 +73,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-module.exports = User;
+module.exports = router;

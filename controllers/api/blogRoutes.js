@@ -40,4 +40,4 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-module.exports = Blog;
+module.exports = router;
