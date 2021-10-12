@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     const userData = await User.findAll({
       include: [
         {
-          attributes: ['name']
+          attributes: ['user_name']
         }
       ]
     })
