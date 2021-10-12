@@ -1,11 +1,11 @@
 <!-- Loop over each object in the blogs array -->
 {{#each blogs as |blog| }}
 <div class="row mb-4 blog">
-  <div class="col-md-5">
+  <div class="col-md-5" id="blog-info">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{!-- {{{get_emoji}}} --}}
-      <a href="/blog/{{blog.id}}">{{blog.name}}</a>
+      <a href="/blog/{{blog.id}}" id="blog-title">{{blog.name}}</a>
     </h2>
     <p>
       {{!-- <span for="img" aria-label="money">💲</span> --}}
@@ -14,7 +14,7 @@
     </p>
     <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-7" id="blog-content">
     <p>
       {{blog.description}}
     </p>

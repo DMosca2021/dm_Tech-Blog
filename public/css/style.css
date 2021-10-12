@@ -3,6 +3,26 @@ body {
     height: 100vh;
 }
 
+#header {
+    background-color: white;
+}
+
+#blog-info {
+    background-color: gray;
+}
+
+#blog-title {
+    color: white;
+}
+
+.subject-text {
+    font-weight: bolder;
+}
+
+#blog-content {
+    background-color: white;
+}
+
 h1 {
     justify-content: center;
     align-items: center;
