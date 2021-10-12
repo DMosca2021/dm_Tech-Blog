@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
-  <link rel="stylesheet" "text/css" href="../../public/css/jass.css">
-  <link rel="stylesheet" "text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" "text/css" href="../../public/css/style.css">
+  {{!-- <link rel="stylesheet" type="text/css" href="../../public/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/style.css"> --}}
 </head>
 
 <body>
@@ -22,18 +22,14 @@
         {{#if logged_in}}
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a class="no-button" href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
-
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
   <!-- Render script for logged in users only -->

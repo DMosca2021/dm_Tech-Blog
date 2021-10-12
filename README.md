@@ -65,5 +65,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 - Finish Views
     - Finish partials
 - Start and Finish baisc JS files
-- Finish the basic seeds (currently still the stuff from the activities.)
-- Deploy to heroku 
+- Deploy to heroku <-- Errors out due to Routes issue. Handlebars not rendering due to routes issue. Not able to get data out of the database

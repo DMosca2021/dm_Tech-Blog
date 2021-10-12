@@ -1,32 +1,27 @@
 <div class="columns is-mobile">
     <div class="column">
         <h1 class="title is-1">Hello, {{user_name}}!</h1>
-        <a class="btn create-btn" href="./partials/dashboard-add.handlebars">Create Post</a>
+        <a class="btn create-btn" href="">Create Post</a>
     </div>
 </div>
 
 
-    <div class="columns is-mobile">
-        <div class="column is-full">
-            {{#if blog.length}}
-                <h2>Posted blogs:</h2>
-                {{#each blog as |blog|}}
+<div class="columns is-mobile">
+    <div class="column is-full">
+        {{#if blog.length}}
+            <h2>Posted blogs:</h2>
+            {{#each blog as |blog|}}
                 <div class="row mb-4 project">
                     <div class="col-md-5">
-                        <h2>
-                            <a href="/blog/{{blog.id}}">{{blog.name}}</a>
-                        </h2>
+                        <h2><a href="/blog/{{blog.id}}">{{blog.name}}</a></h2>
                         <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
                     </div>
-                <div class="col-md-7">
-                    <p>
-                    {{blog.description}}
-                    </p>
-                    <p>
-                        {{blog.content}}
-                    </p>
+                    <div class="col-md-7">
+                        <p>{{blog.description}}</p>
+                        <p>{{blog.content}}</p>
+                    </div>
                 </div>
-                </div>
-                {{/each}}
-      </div>
+            {{/each}}
+        {{/if}}
     </div>
+</div>

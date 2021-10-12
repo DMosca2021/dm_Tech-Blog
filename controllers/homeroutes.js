@@ -6,52 +6,16 @@ router.get('/', async (req, res) => {
   try {
     // Get all blogs and JOIN with user data
     const blogData = await Blog.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      include: [{ model: User }],
     });
 
     // Serialize data so the template can read it
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('home', { 
+    res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/blog/:id', async (req, res) => {
-  try {
-    const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-            model: Comment, 
-            include: [
-                {
-                    model: User,
-                    attributes: ['name']
-                }
-            ]
-        }
-      ],
-    });
-
-    const blog = blogData.get({ plain: true });
-
-    res.render('blog', {
-      ...blog,
-      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -77,6 +41,55 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/blog', withAuth, async (req, res) => {
+  try {
+    res.render('blog', {
+      logged_in: true
+    });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+router.get('/blog/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['user_name'],
+        },
+        {
+            model: Comment, 
+            include: [
+                {
+                    model: User,
+                    attributes: ['user_name']
+                }
+            ],
+            attributes: ['id', 'content', 'date_created', 'readerComment_id']
+        }
+      ],
+    });
+
+    const blog = blogData.get({ plain: true });
+
+    // for (let i=0; i<blog.comments.length; i++) {
+    //   const isMatch = blog.comments[i].commentor_id === req.session.user_id;
+    //   blog.comments[i].isAuthor = isMatch;
+    // };
+
+    res.render('dashboard-post', {
+      ...blog,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
