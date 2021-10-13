@@ -24,14 +24,14 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    blogComment_id: {
+    blog_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'blog',
         key: 'id',
       },
     },
-    commentor_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
