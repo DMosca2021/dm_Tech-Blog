@@ -58,11 +58,3 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 - [Deployed Link](https://devins-tech-blog.herokuapp.com/)
 - [Repo Link](https://github.com/DMosca2021/dm_Tech-Blog)
 
-## Need to finish
-
-- Finish Routes
-    - blogRoute, Need to finish the put, post, del routes for the blog comments.
-- Finish Views
-    - Finish partials
-- Start and Finish baisc JS files
-- Deploy to heroku <-- Errors out due to Routes issue. Handlebars not rendering due to routes issue. Not able to get data out of the database
