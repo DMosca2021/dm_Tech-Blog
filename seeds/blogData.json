@@ -3,5 +3,15 @@
       "name": "Testing, Testing, 1, 2, 3",
       "subject": "Why writing tests for your app is important!",
       "description": "Testing is about making sure that the code in your application does what you expect it to do, and keeps doing what you expect it to do when you make changes"
+    },
+    {
+      "name": "Keep your code DRY!",
+      "subject": "Don't Don't Repeat Repeat Yourself Yourself",
+      "description": "When writing your code try applying DRY coding practices. This will keep your code easy to read and maintain"
+    },
+    {
+      "name": "Handlebars, MORE than just a mustache!",
+      "subject": "Using Handlebars to quickly create HTML templates.",
+      "description": "Handlebars.js is a popular templating engine that is powerful, simple to use and has a large community. With Handlebars, you can separate the generation of HTML from the rest of your JavaScript and write cleaner code."
     }
 ]
